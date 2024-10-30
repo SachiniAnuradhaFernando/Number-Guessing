@@ -1,28 +1,28 @@
 let randomnum = Math.floor(Math.random() * 10) + 1;
 let chance = 3;
 
-function Guess() {
-    let input = parseInt(document.getElementById("input").value);
-    let winloss = document.getElementById("winloss");
-    let lowhigher = document.getElementById("lowhigher");
-    let leftnum = document.getElementById("leftnum");
+function GuessNumber() {
+    let getinput = parseInt(document.getElementById("getinput").value);
+    let a = document.getElementById("a");
+    let b = document.getElementById("b");
+    let c = document.getElementById("c");
 
     if (chance > 0) {
-        if (randomnum === input) {
-            winloss.innerHTML = "YOU WON THE GAME!";
-            lowhigher.innerHTML = "Your Guessed the correct number!";
+        if (randomnum === getinput) {
+            a.innerHTML = "YOU WON THE GAME!";
+            b.innerHTML = "Your Guessed the correct number!";
         } else {
             chance--;
-            leftnum.innerHTML = "Chances you have left: " + chance;
-            if (randomnum > input) {
-                lowhigher.innerHTML = "Your guess number is too low";
+            c.innerHTML = "Chances you have left: " + chance;
+            if (randomnum > getinput) {
+                b.innerHTML = "Your guess number is too low";
             } else {
-                lowhigher.innerHTML = "Your guess number is too high";
+                b.innerHTML = "Your guess number is too high";
             }
         }
         
-        if (chance === 0 && randomnum !== input) {
-            winloss.innerHTML = "EWWW  MODAYA! GAME OVER!";
+        if (chance === 0 && randomnum !== getinput) {
+            a.innerHTML = "EWWW  MODAYA! GAME OVER!";
             
         }
     }
